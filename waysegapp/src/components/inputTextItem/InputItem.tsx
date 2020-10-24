@@ -7,6 +7,7 @@ interface InputItemProps {
     textInputProps?: TextInputProps,
     onChange?: (e: NativeSyntheticEvent<TextInputChangeEventData>) => void
     name?: string;
+    type?: "date"
 }
 
 
