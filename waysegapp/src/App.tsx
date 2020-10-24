@@ -5,9 +5,7 @@ import { styles } from './Style'
 
 const App = () => {
     return (
-        <SafeAreaView>
-            <Routes />
-        </SafeAreaView>
+        <Routes />
     )
 }
 

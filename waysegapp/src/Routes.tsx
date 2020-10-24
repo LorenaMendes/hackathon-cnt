@@ -4,17 +4,24 @@ import React from 'react'
 import { Text, View } from 'react-native';
 import ResearchPage from './pages/researchPage/ResearchPage'
 
-const Routes = () => {
-    const Stack = createStackNavigator();
+const Stack = createStackNavigator();
+
+function HomeScreen() {
     return (
-        <View>
-            <Text>Routes</Text>
-            <NavigationContainer>
-                <Stack.Navigator>
-                    <Stack.Screen name="Home" component={ResearchPage} />
-                </Stack.Navigator>
-            </NavigationContainer>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <Text>Home Screen</Text>
         </View>
+    );
+}
+
+
+const Routes = () => {
+    return (
+        <NavigationContainer>
+            <Stack.Navigator>
+                <Stack.Screen name="Pesquisa" component={ResearchPage} />
+            </Stack.Navigator>
+        </NavigationContainer>
     )
 }
 

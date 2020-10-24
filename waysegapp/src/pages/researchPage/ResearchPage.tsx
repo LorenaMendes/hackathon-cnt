@@ -6,8 +6,7 @@ import style from './ResearchPageStyle'
 const ResearchPage = () => {
     return (
         <View>
-              <Text>ResearchPage</Text>
-            {/* <ResearchForm /> */}
+            <ResearchForm />
         </View>
     )
 }
