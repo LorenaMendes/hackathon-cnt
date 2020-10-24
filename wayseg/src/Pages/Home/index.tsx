@@ -1,8 +1,11 @@
 import React from 'react';
+import Logo from '../../assets/images/temp-cnt.png';
 
 function Home() {
     return(
-        <h1>Homepage</h1>
+        <>
+            <img src={Logo} />
+        </>
     );
 }
 
