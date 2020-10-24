@@ -1,13 +1,12 @@
 import React from 'react'
 import { SafeAreaView, Text, View } from 'react-native'
+import Routes from './Routes'
 import { styles } from './Style'
 
 const App = () => {
     return (
-        <SafeAreaView style={styles.container}>
-            <Text >
-                HELLO FUCKING WORLD
-            </Text>
+        <SafeAreaView>
+            <Routes />
         </SafeAreaView>
     )
 }
