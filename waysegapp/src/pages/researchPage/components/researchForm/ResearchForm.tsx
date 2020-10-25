@@ -74,33 +74,6 @@ const ResearchForm = () => {
           </View>
         </TouchableNativeFeedback>
 
-        <Text>Campo</Text>
-        <InputOption
-          value={0}
-          label="Pista dupla com canteiro central"
-          checked={false}
-        />
-        <InputOption
-          value={1}
-          label="Pista dupla com barreira central"
-          checked={true}
-        />
-        <InputOption
-          value={2}
-          label="Pista dupla com faixa central"
-          checked={false}
-        />
-        <InputOption
-          value={3}
-          label="Pista simples de mão única"
-          checked={false}
-        />
-        <InputOption
-          value={4}
-          label="Pista simples de mão dupla"
-          checked={false}
-        />
-
         <Button title="Gerar Formulário" />
       </View>
     );
