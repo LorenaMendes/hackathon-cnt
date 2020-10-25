@@ -1,15 +1,18 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   // ...
-  appButtonContainer: {
+  container: {
     elevation: 8,
-    backgroundColor: 'orange',
-    // borderRadius: 10,
-    paddingVertical: 30,
+    backgroundColor: 'green',
+    margin: 8,
+    borderRadius: 4,
+  },
+  touch: {
+    paddingVertical: 18,
     paddingHorizontal: 12,
   },
-  appButtonText: {
+  text: {
     fontSize: 20,
     color: '#fff',
     fontWeight: 'bold',

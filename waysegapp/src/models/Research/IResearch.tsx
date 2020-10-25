@@ -16,6 +16,19 @@ export interface IResearch {
     roadIntervals: IRoadInterval[]
     createdAt: Date
 }
+export interface IResearchHeader {
+    id: string;
+    form: string
+    data: Date
+    state: string
+    felxible: boolean
+    hard: boolean
+    roadName: string
+    route: number
+    roadDatas: IResearchRoadData[]
+    roadIntervals: IRoadInterval[]
+    createdAt: Date
+}
 
 export interface IResearchRoadData {
     id: string
