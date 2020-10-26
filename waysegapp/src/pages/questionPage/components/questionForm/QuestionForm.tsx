@@ -208,6 +208,7 @@ const QuestionForm = () => {
             <Button
             onPress={() => {
               // Geolocation.getCurrentPosition(info => console.log(info));
+                setLocation({lat: "11233131", log: "12311331"})
             }}
             >
               <Text> Localização Atual</Text>
