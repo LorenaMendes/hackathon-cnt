@@ -203,8 +203,8 @@ const QuestionForm = () => {
         ListHeaderComponent={() => (
           <View style={{ padding: 8, borderWidth: 1, borderColor: "orange", margin: 16, borderRadius: 8 }}>
             <Text style={{ color: "orange" }}>Localização</Text>
-            <Text>{location.lat}</Text>
-            <Text>{location.log}</Text>
+            <Text>lat:{location.lat}</Text>
+            <Text>long:{location.log}</Text>
             <Button
             onPress={() => {
               // Geolocation.getCurrentPosition(info => console.log(info));
