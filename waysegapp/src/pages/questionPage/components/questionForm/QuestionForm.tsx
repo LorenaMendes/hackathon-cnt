@@ -8,7 +8,6 @@ import { IQuestion } from '../../../../models/questions/IQuestions'
 import QuestionItem from './questionItem/QuestionItem'
 import { v4 } from 'uuid';
 import Button from '../../../../components/button/Button'
-import Geolocation from '@react-native-community/geolocation';
 
 
 const ROAD_INTERVAL_1: IRoadInterval = {
@@ -208,7 +207,7 @@ const QuestionForm = () => {
             <Text>{location.log}</Text>
             <Button
             onPress={() => {
-              Geolocation.getCurrentPosition(info => console.log(info));
+              // Geolocation.getCurrentPosition(info => console.log(info));
             }}
             >
               <Text> Localização Atual</Text>
