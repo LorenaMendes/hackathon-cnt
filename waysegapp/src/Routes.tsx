@@ -19,9 +19,9 @@ function HomeScreen() {
 const Routes = () => {
     return (
         <NavigationContainer>
-            <Stack.Navigator>
+            <Stack.Navigator initialRouteName="Pesquisa">
                 <Stack.Screen name="Questionário" component={QuestionPage} />
-                {/* <Stack.Screen name="Pesquisa" component={ResearchPage} /> */}
+                <Stack.Screen name="Pesquisa" component={ResearchPage} />
             </Stack.Navigator>
         </NavigationContainer>
     )

@@ -1,5 +1,5 @@
 import React, { FC, useCallback, useEffect, useRef, useState } from 'react'
-import { View, Text, TextInputProps, TouchableNativeFeedback, Keyboard, TouchableHighlight, FlatList } from 'react-native'
+import { View, Text, TextInputProps, TouchableNativeFeedback, Keyboard, TouchableHighlight, FlatList, PermissionsAndroid, Platform } from 'react-native'
 import InputItem from '../../../../components/inputTextItem/InputItem'
 import InputOption from '../../../../components/inputOption/InputOption'
 import { IResearch, IResearchRoadData, IRoadInterval } from '../../../../models/Research/IResearch'
@@ -183,22 +183,14 @@ const QuestionForm = () => {
   const [date, setDate] = useState(new Date());
 
   const [questions, setQuestions] = useState<IQuestion[]>(QUESTIONS)
-
+  const [location, setLocation] = useState({ lat: "", log: "" })
   const refFlat = useRef<FlatList<IQuestion>>(null)
 
 
-  var [isPress, setIsPress] = React.useState(0);
-
-  console.log(isPress);
-
   useEffect(() => {
 
+    // Geolocation.getCurrentPosition((e) => console.log(e.coords))
 
-    // Geolocation.requestAuthorization();
-    ;
-    return () => {
-
-    }
   }, [])
 
 
@@ -212,14 +204,14 @@ const QuestionForm = () => {
         ListHeaderComponent={() => (
           <View style={{ padding: 8, borderWidth: 1, borderColor: "orange", margin: 16, borderRadius: 8 }}>
             <Text style={{ color: "orange" }}>Localização</Text>
-            <InputItem label={"latitude"}></InputItem>
-            <InputItem label={"longitude"}></InputItem>
+            <Text>{location.lat}</Text>
+            <Text>{location.log}</Text>
             <Button
-              // onPress={() => {
-              //   Geolocation.getCurrentPosition(info => console.log(info));
-              // }}
+            onPress={() => {
+              Geolocation.getCurrentPosition(info => console.log(info));
+            }}
             >
-              Localização Atual
+              <Text> Localização Atual</Text>
             </Button>
           </View>
         )}

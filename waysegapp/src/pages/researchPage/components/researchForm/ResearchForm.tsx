@@ -6,77 +6,83 @@ import { IResearch } from '../../../../models/Research/IResearch'
 import Button from '../../../../components/button/Button'
 import styles from './ResearchFormStyle'
 import DateTimePickerModal from "react-native-modal-datetime-picker";
-
-const ResearchForm = () => {
-    const [research, setResearch] = useState<IResearch>({} as IResearch)
-    const [date, setDate] = useState(new Date());
-    const [showDatePicker, setShowDatePicker] = useState(false)
-
-    const onSubmitHandle = useCallback(
-        () => {
-
-        },
-        [],
-    )
-
-    const onChangeHandle = useCallback(
-        () => {
-
-        },
-        [],
-    )
-    const onChangeDateTime = useCallback(
-        (_date) => {
-            setDate(_date);
-            setShowDatePicker(false);
-
-        },
-        [],
-    )
+import { useNavigation } from '@react-navigation/native'
 
 
-    return (
-      <View style={styles.container}>
-        <DateTimePickerModal
-          isVisible={showDatePicker}
-          mode="date"
-          onConfirm={onChangeDateTime}
-          onCancel={() => {
-            setShowDatePicker(false);
-          }}
-        />
-        <InputItem
-          label="Formulario"
-          textInputProps={{
-            value: research.form,
-          }}
-        />
-        <InputItem label="Folha" textInputProps={{value: research.roadName}} />
+const ResearchForm: FC = () => {
 
-        <TouchableNativeFeedback
-          onPress={() => {
-            setShowDatePicker(true);
-            Keyboard.dismiss();
+
+  const navigation = useNavigation();
+
+  const [research, setResearch] = useState<IResearch>({} as IResearch)
+  const [date, setDate] = useState(new Date());
+  const [showDatePicker, setShowDatePicker] = useState(false)
+
+  const onSubmitHandle = useCallback(
+    () => {
+      navigation.navigate("Questionário");
+    },
+    [],
+  )
+
+  const onChangeHandle = useCallback(
+    () => {
+
+    },
+    [],
+  )
+  const onChangeDateTime = useCallback(
+    (_date) => {
+      setDate(_date);
+      setShowDatePicker(false);
+
+    },
+    [],
+  )
+
+
+  return (
+    <View style={styles.container}>
+      <DateTimePickerModal
+        isVisible={showDatePicker}
+        mode="date"
+        onConfirm={onChangeDateTime}
+        onCancel={() => {
+          setShowDatePicker(false);
+        }}
+      />
+      <InputItem
+        label="Formulario"
+        textInputProps={{
+          value: research.form,
+        }}
+      />
+      <InputItem label="Folha" textInputProps={{ value: research.roadName }} />
+
+      <TouchableNativeFeedback
+        onPress={() => {
+          setShowDatePicker(true);
+          Keyboard.dismiss();
+        }}>
+        <View
+          style={{
+            padding: 12,
           }}>
-          <View
+          <Text style={{ marginBottom: 8 }}>Data:</Text>
+          <Text
             style={{
-              padding: 12,
+              borderBottomWidth: 1,
+              padding: 4,
+              borderBottomColor: '#fa0',
             }}>
-            <Text style={{marginBottom: 8}}>Data:</Text>
-            <Text
-              style={{
-                borderBottomWidth: 1,
-                padding: 4,
-                borderBottomColor: '#fa0',
-              }}>
-              {date.getDate()}/{date.getMonth()}/{date.getFullYear()}
-            </Text>
-          </View>
-        </TouchableNativeFeedback>
+            {date.getDate()}/{date.getMonth()}/{date.getFullYear()}
+          </Text>
+        </View>
+      </TouchableNativeFeedback>
 
-        <Button title="Gerar Formulário" />
-      </View>
-    );
+      <Button onPress={onSubmitHandle} title="Gerar Formulário" />
+    </View>
+  );
 }
 
 
